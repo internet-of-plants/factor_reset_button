@@ -3,7 +3,7 @@
 #include <iop-hal/thread.hpp>
 #include <iop-hal/log.hpp>
 
-static std::optional<iop_hal::io::Pin> factoryResetButton;
+static std::optional<iop_hal::PinRaw> factoryResetButton;
 static bool factoryResetFlag = false;
 
 static volatile iop::time::milliseconds resetStateTime = 0;
@@ -35,7 +35,7 @@ void IOP_RAM buttonChanged() noexcept {
 }
 
 namespace reset {
-auto setup(iop_hal::io::Pin button) noexcept -> void {
+auto setup(iop_hal::PinRaw button) noexcept -> void {
   IOP_TRACE();
   iop_hal::gpio.setMode(button, iop_hal::io::Mode::INPUT);
   iop_hal::gpio.setInterruptCallback(button, iop_hal::io::InterruptState::CHANGE, buttonChanged);
