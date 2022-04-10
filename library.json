@@ -16,6 +16,10 @@
   "dependencies": [
     {
       "name": "iop-hal",
+      "version": "https://github.com/internet-of-plants/iop-hal"
+    }
+    {
+      "name": "iop",
       "version": "https://github.com/internet-of-plants/iop"
     }
   ],
