@@ -4,7 +4,7 @@
 #include <iop-hal/log.hpp>
 
 static std::optional<iop_hal::io::Pin> factoryResetButton;
-static bool factoryResetFlag = false
+static bool factoryResetFlag = false;
 
 static volatile iop::time::milliseconds resetStateTime = 0;
 constexpr const uint32_t fifteenSeconds = 15000;
