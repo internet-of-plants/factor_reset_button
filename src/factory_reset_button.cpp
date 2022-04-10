@@ -1,6 +1,7 @@
-#include "iop-hal/thread.hpp"
-#include "iop-hal/log.hpp"
+#include <factory_reset_button.hpp>
 
+#include <iop-hal/thread.hpp>
+#include <iop-hal/log.hpp>
 
 static std::optional<iop_hal::io::Pin> factoryResetButton;
 // Note: this probably should be AtomicBool
