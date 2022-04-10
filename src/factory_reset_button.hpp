@@ -12,7 +12,7 @@ namespace reset {
   /// Factory resets deletes both the wifi credentials and the monitor server token
   auto setup(iop_hal::io::Pin button) noexcept -> void;
 
-  auto resetIfNeeded(EventLoop &loop) noexcept -> void;
+  auto resetIfNeeded(iop::EventLoop &loop) noexcept -> void;
 }
 
 #endif
