@@ -41,7 +41,7 @@ auto setup(iop_hal::io::Pin button, std::shared_ptr<bool> flag) noexcept -> void
   factoryResetFlag = flag;
 
   IOP_TRACE();
-  iop_hal::gpio.setMode(config::factoryResetButton, iop_hal::io::Mode::INPUT);
-  iop_hal::gpio.setInterruptCallback(config::factoryResetButton, iop_hal::io::InterruptState::CHANGE, buttonChanged);
+  iop_hal::gpio.setMode(button, iop_hal::io::Mode::INPUT);
+  iop_hal::gpio.setInterruptCallback(button, iop_hal::io::InterruptState::CHANGE, buttonChanged);
 }
 }
