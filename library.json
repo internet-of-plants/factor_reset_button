@@ -16,7 +16,7 @@
   "dependencies": [
     {
       "name": "iop-hal",
-      "version": "https://github.com/internet-of-plants/iop-hal"
+      "version": "https://github.com/internet-of-plants/iop"
     }
   ],
   "platforms": ["espressif8266", "espressif32","native"],

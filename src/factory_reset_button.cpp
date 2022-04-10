@@ -4,8 +4,7 @@
 #include <iop-hal/log.hpp>
 
 static std::optional<iop_hal::io::Pin> factoryResetButton;
-// Note: this probably should be AtomicBool
-static std::shared_ptr<bool> factoryResetFlag;
+static bool factoryResetFlag = false
 
 static volatile iop::time::milliseconds resetStateTime = 0;
 constexpr const uint32_t fifteenSeconds = 15000;
@@ -36,12 +35,21 @@ void IOP_RAM buttonChanged() noexcept {
 }
 
 namespace reset {
-auto setup(iop_hal::io::Pin button, std::shared_ptr<bool> flag) noexcept -> void {
-  factoryResetButton = button;
-  factoryResetFlag = flag;
-
+auto setup(iop_hal::io::Pin button) noexcept -> void {
   IOP_TRACE();
   iop_hal::gpio.setMode(button, iop_hal::io::Mode::INPUT);
   iop_hal::gpio.setInterruptCallback(button, iop_hal::io::InterruptState::CHANGE, buttonChanged);
+}
+
+// TODO: we should use a push based approach instead of a pull based, but this works for now
+auto resetIfNeeded(EventLoop &loop) noexcept -> void {
+  IOP_TRACE();
+  if (factoryResetFlag) {
+    factoryResetFlag = false;
+    loop.logger().warn(IOP_STR("Factory Reset: deleting stored credentials"));
+    loop.storage().removeWifi();
+    loop.storage().removeToken();
+    iop::Network::disconnect();
+  }
 }
 }
