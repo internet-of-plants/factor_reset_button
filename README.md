@@ -2,7 +2,7 @@
 
 [internet-of-plants/iop](https://github.com/internet-of-plants/iop) integrated C++17 platformio library to turn any button into a factory reset trigger.
 
-The button must be pressed for at least 15 seconds to trigger call the factory reset interrupt machinery for [internet-of-plants/iop](https://github.com/internet-of-plants/iop)
+The button must be pressed for at least 15 seconds to trigger the factory reset interrupt machinery for [internet-of-plants/iop](https://github.com/internet-of-plants/iop)
 
 ## Targets Supported
 
