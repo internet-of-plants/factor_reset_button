@@ -41,7 +41,6 @@ auto setup(iop_hal::PinRaw button) noexcept -> void {
   iop_hal::gpio.setInterruptCallback(button, iop_hal::io::InterruptState::CHANGE, buttonChanged);
 }
 
-// TODO: we should use a push based approach instead of a pull based, but this works for now
 auto resetIfNeeded(iop::EventLoop &loop) noexcept -> void {
   IOP_TRACE();
   if (factoryResetFlag) {
