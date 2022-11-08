@@ -13,4 +13,4 @@ The button must be pressed for at least 15 seconds to trigger the factory reset 
 
 ## License
 
-[GNU Affero General Public License version 3 or later (AGPL-3.0+)](https://github.com/internet-of-plants/factory_reset_button/blob/main/LICENSE.md)
+[GNU Affero General Public License version 3 or later (AGPL-3.0+)](https://github.com/internet-of-plants/factory-reset-button/blob/main/LICENSE.md)

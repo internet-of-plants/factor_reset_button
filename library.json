@@ -1,10 +1,10 @@
 {
-  "name": "factory_reset_button",
+  "name": "factory-reset-button",
   "description": "",
-  "homepage": "https://github.com/internet-of-plants/factory_reset_button",
+  "homepage": "https://github.com/internet-of-plants/factory-reset-button",
   "repository": {
     "type": "git",
-    "url": "https://github.com/internet-of-plants/factory_reset_button.git"
+    "url": "https://github.com/internet-of-plants/factory-reset-button.git"
   },
   "version": "0.1.0",
   "authors": {

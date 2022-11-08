@@ -21,7 +21,7 @@ void IOP_RAM buttonChanged() noexcept {
 
   if (iop_hal::gpio.digitalRead(*factoryResetButton) == iop_hal::io::Data::HIGH) {
     resetStateTime = iop_hal::thisThread.timeRunning() + fifteenSeconds;
-    
+
     if (IOP_LOG_LEVEL <= iop::LogLevel::INFO) {
       iop::Log::print("[INFO] RESET: Press this button for 15 seconds more to factory reset the device\n", iop::LogLevel::INFO, iop::LogType::STARTEND);
     }
